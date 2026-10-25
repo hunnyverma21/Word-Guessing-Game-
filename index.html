@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Guessing Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-card">
+    <header>
+      <div class="logo">W</div>
+      <p class="eyebrow">DAILY BRAIN BOOST</p>
+      <h1>Word Guess</h1>
+      <p class="subtitle">Guess the hidden 5-letter word in 6 tries.</p>
+    </header>
+
+    <section class="status-row" aria-live="polite">
+      <span id="attempt-label">Attempt 1 of 6</span>
+      <span class="score">Wins: <strong id="wins">0</strong></span>
+    </section>
+
+    <section id="board" class="board" aria-label="Guess board"></section>
+    <p id="message" class="message" aria-live="polite">Type a 5-letter word to begin.</p>
+
+    <form id="guess-form" autocomplete="off">
+      <label for="guess-input">Your guess</label>
+      <div class="input-row">
+        <input id="guess-input" type="text" maxlength="5" minlength="5"
+          placeholder="e.g. PLANT" aria-label="Enter a five-letter word" required>
+        <button type="submit" id="guess-button">Guess</button>
+      </div>
+    </form>
+
+    <div class="actions">
+      <button class="secondary" id="hint-button" type="button">Get a hint</button>
+      <button class="secondary" id="new-button" type="button">New game ↻</button>
+    </div>
+
+    <section class="legend">
+      <div><span class="tile correct">A</span><span><b>Correct</b><small>Right letter, right place</small></span></div>
+      <div><span class="tile present">B</span><span><b>Close</b><small>In the word, wrong place</small></span></div>
+      <div><span class="tile absent">C</span><span><b>Not in word</b><small>Try another letter</small></span></div>
+    </section>
+    <footer>Made for curious minds · Play again and beat your streak!</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
